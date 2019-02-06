@@ -10,8 +10,8 @@ const Counter = ({ count, increment, decrement }) => {
         <div className='keyboardContainer'>
             <p>Contador: {count}</p>
             <div className='keyboard'>
-                <button onClick={decrement}>-</button>
-                <button onClick={increment}>+</button>
+                <button onClick={() => decrement(20)}>-</button>
+                <button onClick={() => increment(10)}>+</button>
             </div>
         </div>
     )
@@ -26,8 +26,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        increment: () => dispatch(increment),
-        decrement: () => dispatch(decrement),
+        increment: (value) => dispatch(increment(value)),
+        decrement: (value) => dispatch(decrement(value)),
     }
 }
 
